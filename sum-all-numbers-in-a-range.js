@@ -18,19 +18,58 @@
 // *****************************************PSEUDOCODE***************************************
 
 // 1+2+3+4 = 10
-// let sum = 0;
-// WHEN GIVEN two numbers, FIRST ORDER IT FROM LOWEST TO HIGHEST 
 
-// if x < y {
-//   do for loop from x to y
-// }
+// let sum = 0
+// let range = []
 
-// if y > x {
-//   do for loop from x to y
-// }
+//when given two numbers/array, get the range including the numbers and push it to the emptyArray.
 
-//
+// WHEN given two numbers, check if firstNumber is greater than secondNumber.  
+// ex) 4 < 2
+// then do for loop and do i--;
+// and sum up
+
+// else if 
+// ex) 2 > 4
+// do i++
+
+// THEN, sum all the range including the number and return the sum
+
+// 
 
 // 3.
 
 // // **************************************************************************************
+
+function sumAll(arr) {
+  let sum = 0;
+  let emptyArray = [];
+
+  if (arr[0] < arr[1]) {
+    for (let i = arr[0]; i <= arr[1]; i++) {
+      emptyArray.push(i)
+    }
+  } else {
+    for (let i = arr[0]; i >= arr[1]; i--) { //arr[0] = 4; arr[1] = 1;
+      emptyArray.push(i)
+    }
+  }
+
+  for (let i = 0; i < emptyArray.length; i++) {
+    sum += emptyArray[i]
+    console.log("this is the value of sum: " + sum )
+  }
+    return sum
+}
+
+console.log(sumAll([1, 4]));
+// 10
+
+console.log(sumAll([4, 1]));
+// 10
+
+console.log(sumAll([5, 10]));
+// 45
+
+console.log(sumAll([10, 5]));
+// 45
