@@ -1,13 +1,9 @@
 function sumAll(arr) {
-  const min = arr[0] < arr[1] ? arr[0] : arr[1];
-  const max = arr[0] > arr[1] ? arr[0] : arr[1];
-
-  let sum = 0; 
-  for (let i = min; i <= max; i++) { 
+  let sum = 0;
+  for (let i = Math.min(...arr); i <= Math.max(...arr); i++) { //(...arr) is an example of a spread operator. 
     sum += i;
-  } 
-  
-  return sum 
+  }
+  return sum;
 }
 
 console.log(sumAll([1, 4]));
